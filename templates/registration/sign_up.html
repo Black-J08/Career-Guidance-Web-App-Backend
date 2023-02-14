@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up Page</h1>
+    <form method="post">
+        <input type="text" name="username" id="username"><br>
+        <input type="text" name="first_name" id="first_name"><br>
+        <input type="text" name="last_name" id="last_name"><br>
+        <input type="email" name="email" id="email"><br>
+        <input type="password" name="password1" id="password1"><br>
+        <input type="password" name="password2" id="password2"><br>
+        {% csrf_token %}
+        <button type="submit">Register</button>
+        {% if form.errors %}
+        <p>your form has errors</p><br>
+        {{form.errors}}
+        {% endif %}
+    </form>
+</body>
+</html>
