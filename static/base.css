@@ -1,0 +1,37 @@
+.header {
+    position: absolute;
+    width: 1920px;
+    height: 400px;
+    z-index: -10;
+
+    background: #23004D;
+}
+
+.brand-logo-career {
+    font-weight: 600;
+    font-size: 2.6rem;
+    text-decoration: none;
+
+    color: #9D4BFF;
+}
+
+.brand-logo-guide {
+    color: white;
+}
+
+.nav-link {
+    font-weight: 600 !important;
+    font-size: 1.24rem !important;
+
+    color: white !important;
+}
+
+.welcome {
+    /* position: fixed; */
+    font-weight: 600;
+    font-size: 3rem;
+    /* margin-top: 5rem; */
+    /* z-index: 100; */
+
+    color: white;
+}
