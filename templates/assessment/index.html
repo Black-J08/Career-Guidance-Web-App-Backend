@@ -1,0 +1,490 @@
+{% extends 'base.html' %}
+
+{% block title %}Assessment | Careerguide{% endblock %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'assessment/css/styles.css' %}">
+<script src="{% static 'assessment/js/index.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<!-- {% csrf_token %} -->
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button id="accordion1button" class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#accordion1">
+                General Information
+            </button>
+        </h2>
+        <div id="accordion1" class="accordion-collapse collapse show">
+            <div class="accordion-body p-5">
+
+                <div class="row">
+                    <label for="name" class="col-md-2 col-form-label col-form-label-lg">Full Name</label>
+                    <div class="col">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <label for="age" class="col-md-2 col-form-label col-form-label-lg">Age</label>
+                    <div class="col">
+                        <input type="text" class="form-control form-control-lg" id="age" name="age">
+                    </div>
+                </div>
+
+                <br>
+
+                <fieldset class="row mb-3">
+                    <legend for="sex" class="col-md-2 col-form-label col-form-label-lg">Sex</legend>
+                    <div class="col-md-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sex" id="sexRadio1" value="M">
+                            <label class="form-check-label" for="sexRadio1">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sex" id="sexRadio2" value="F">
+                            <label class="form-check-label" for="sexRadio2">Female</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button id="accordion2button" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#accordion2">
+                High School Marks
+            </button>
+        </h2>
+        <div id="accordion2" class="accordion-collapse collapse">
+            <div class="accordion-body p-5">
+
+                <fieldset class="row mb-3">
+                    <legend class="col-md-2 col-form-label col-form-label-lg">Stream</legend>
+                    <div class="col-md-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="stream" id="streamRadio1" value="S">
+                            <label class="form-check-label" for="streamRadio1">Science</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="stream" id="streamRadio2" value="C">
+                            <label class="form-check-label" for="streamRadio2">Commerce</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="stream" id="streamRadio3" value="H">
+                            <label class="form-check-label" for="streamRadio3">Humanities</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Subject 1</label>
+                        <input type="text" class="form-control" id="subject1_name" placeholder="Name">
+                        <input type="text" class="form-control" id="subject1_marks" placeholder="Marks">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Subject 2</label>
+                        <input type="text" class="form-control" id="subject2_name" placeholder="Name">
+                        <input type="text" class="form-control" id="subject2_marks" placeholder="Marks">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Subject 3</label>
+                        <input type="text" class="form-control" id="subject3_name" placeholder="Name">
+                        <input type="text" class="form-control" id="subject3_marks" placeholder="Marks">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Subject 4</label>
+                        <input type="text" class="form-control" id="subject4_name" placeholder="Name">
+                        <input type="text" class="form-control" id="subject4_marks" placeholder="Marks">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Subject 5</label>
+                        <input type="text" class="form-control" id="subject5_name" placeholder="Name">
+                        <input type="text" class="form-control" id="subject5_marks" placeholder="Marks">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button id="accordion3button" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#accordion3">
+                Holland Code Assessment
+            </button>
+        </h2>
+        <div id="accordion3" class="accordion-collapse collapse">
+            <div class="accordion-body p-5">
+
+                <h5>For each theme, check those items that describe you the best.</h5>
+
+                <br>
+
+                <div class="row">
+                    <label for="" class="col-md-4 fs-5 fw-bolder">Are you</label>
+                    <label for="" class="col-md-4 fs-5 fw-bolder">Can you</label>
+                    <label for="" class="col-md-4 fs-5 fw-bolder">Like to</label>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRAY1">
+                            <label class="form-check-label" for="HCRAY1">
+                                Practical
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRAY2">
+                            <label class="form-check-label" for="HCRAY2">
+                                Athletic
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRAY3">
+                            <label class="form-check-label" for="HCRAY3">
+                                Good with tools
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCIAY1">
+                            <label class="form-check-label" for="HCIAY1">
+                                Analytical
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCIAY2">
+                            <label class="form-check-label" for="HCIAY2">
+                                Scientific
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCIAY3">
+                            <label class="form-check-label" for="HCIAY3">
+                                Observant
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCAAY1">
+                            <label class="form-check-label" for="HCAAY1">
+                                Creative
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCAAY2">
+                            <label class="form-check-label" for="HCAAY2">
+                                Imaginative
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCAAY3">
+                            <label class="form-check-label" for="HCAAY3">
+                                Innovative
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSAY1">
+                            <label class="form-check-label" for="HCSAY1">
+                                Friendly
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSAY2">
+                            <label class="form-check-label" for="HCSAY2">
+                                Helpful
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSAY3">
+                            <label class="form-check-label" for="HCSAY3">
+                                Idealistic
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCEAY1">
+                            <label class="form-check-label" for="HCEAY1">
+                                Self-confident
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCEAY2">
+                            <label class="form-check-label" for="HCEAY2">
+                                Sociable
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCEAY3">
+                            <label class="form-check-label" for="HCEAY3">
+                                Energetic
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCAY1">
+                            <label class="form-check-label" for="HCCAY1">
+                                Accurate
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCAY2">
+                            <label class="form-check-label" for="HCCAY2">
+                                Numerically inclined
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCAY3">
+                            <label class="form-check-label" for="HCCAY3">
+                                Methodical
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRCY1">
+                            <label class="form-check-label" for="HCRCY1">
+                                Fix electrical things
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRCY2">
+                            <label class="form-check-label" for="HCRCY2">
+                                Solve mechanical problems
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRCY3">
+                            <label class="form-check-label" for="HCRCY3">
+                                Play a sport
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCICY1">
+                            <label class="form-check-label" for="HCICY1">
+                                Solve math problem
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCICY2">
+                            <label class="form-check-label" for="HCICY2">
+                                Understand physical theories
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCICY3">
+                            <label class="form-check-label" for="HCICY3">
+                                Do complex calculation
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCACY1">
+                            <label class="form-check-label" for="HCACY1">
+                                Sketch, Draw or Paint
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCACY2">
+                            <label class="form-check-label" for="HCACY2">
+                                Write stories, poetry, music, sing, act or dance
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCACY3">
+                            <label class="form-check-label" for="HCACY3">
+                                Design fashion or interiors
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSCY1">
+                            <label class="form-check-label" for="HCSCY1">
+                                Lead a group discussion
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSCY2">
+                            <label class="form-check-label" for="HCSCY2">
+                                Mediate disputes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSCY3">
+                            <label class="form-check-label" for="HCSCY3">
+                                Plan and supervise an activity
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCECY1">
+                            <label class="form-check-label" for="HCECY1">
+                                Give talks or speeches
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCECY2">
+                            <label class="form-check-label" for="HCECY2">
+                                Organize activities and events
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCECY3">
+                            <label class="form-check-label" for="HCECY3">
+                                Lead a group
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCCY1">
+                            <label class="form-check-label" for="HCCCY1">
+                                Keep accurate records
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCCY2">
+                            <label class="form-check-label" for="HCCCY2">
+                                Use a computer terminal
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCCY3">
+                            <label class="form-check-label" for="HCCCY3">
+                                Write effective business letters
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRLT1">
+                            <label class="form-check-label" for="HCRLT1">
+                                Work outdoors
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRLT2">
+                            <label class="form-check-label" for="HCRLT2">
+                                Be physically active
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCRLT3">
+                            <label class="form-check-label" for="HCRLT3">
+                                Build things
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCILT1">
+                            <label class="form-check-label" for="HCILT1">
+                                Explore ideas
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCILT2">
+                            <label class="form-check-label" for="HCILT2">
+                                Use computers
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCILT3">
+                            <label class="form-check-label" for="HCILT3">
+                                Read scientific or technical magazines
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCALT1">
+                            <label class="form-check-label" for="HCALT1">
+                                Read fiction, plays or poetry
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCALT2">
+                            <label class="form-check-label" for="HCALT2">
+                                Work on craft
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCALT3">
+                            <label class="form-check-label" for="HCALT3">
+                                Take photographs
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSLT1">
+                            <label class="form-check-label" for="HCSLT1">
+                                Work in groups
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSLT2">
+                            <label class="form-check-label" for="HCSLT2">
+                                Do volunteer service
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCSLT3">
+                            <label class="form-check-label" for="HCSLT3">
+                                Play team sports
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCELT1">
+                            <label class="form-check-label" for="HCELT1">
+                                Make decisions affecting others
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCELT2">
+                            <label class="form-check-label" for="HCELT2">
+                                Start your own political campaign
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCELT3">
+                            <label class="form-check-label" for="HCELT3">
+                                Meet important people
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCLT1">
+                            <label class="form-check-label" for="HCCLT1">
+                                Follow clearly defined procedures
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCLT2">
+                            <label class="form-check-label" for="HCCLT2">
+                                Use data processing equipments
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="HCCLT3">
+                            <label class="form-check-label" for="HCCLT3">
+                                Work with numbers
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-success mt-5 float-end" onclick="sendData()">Submit</button>
+{% endblock %}
