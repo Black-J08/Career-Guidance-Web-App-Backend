@@ -1,1 +1,13 @@
-Submitted text {{name}}
+{% extends 'base.html' %}
+
+{% block title %} Result | Careerguide {% endblock %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'assessment/css/result.css' %}">
+{% endblock %}
+
+
+{% block body %}
+Submitted text {{assessment}}
+{% endblock %}

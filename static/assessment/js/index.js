@@ -127,14 +127,18 @@ function sendData() {
     var csrftoken = getCookie('csrftoken');
 
     var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 302) {
+            var json = JSON.parse(this.responseText);
+            console.log(json.url);
+            window.location.href = json.url;
+        }
+    };
     xhr.open("POST", "/assessment/", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.setRequestHeader('X-CSRFToken', csrftoken);
     xhr.onload = function () {
-        if (xhr.status === 200) {
-            console.log(xhr.responseText);
-        }
+        console.log(xhr.responseText);
     };
-    // xhr.send(JSON.stringify(data));
     xhr.send("name=" + _name + "&age=" + _age + "&sex=" + _sex + "&stream=" + _stream + "&subject_1_name=" + _subject1_name + "&subject_1_marks=" + _subject1_marks + "&subject_2_name=" + _subject2_name + "&subject_2_marks=" + _subject2_marks + "&subject_3_name=" + _subject3_name + "&subject_3_marks=" + _subject3_marks + "&subject_4_name=" + _subject4_name + "&subject_4_marks=" + _subject4_marks + "&subject_5_name=" + _subject5_name + "&subject_5_marks=" + _subject5_marks + "&hollandCode1=" + _HC[0] + "&hollandCode2=" + _HC[1] + "&hollandCode3=" + _HC[2]);
 }

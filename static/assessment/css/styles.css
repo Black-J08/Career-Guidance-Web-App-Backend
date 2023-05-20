@@ -5,3 +5,7 @@
 .input-group-text {
     font-size: 1.2rem;
 }
+
+#wlcm {
+    display: none !important;
+}

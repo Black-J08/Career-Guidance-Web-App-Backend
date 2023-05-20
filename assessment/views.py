@@ -1,9 +1,18 @@
 from django.shortcuts import render
-
-# Create your views here.
-from django.http import HttpResponse
-from django.template import loader
+from django.http import HttpResponse, JsonResponse
+from django.urls import reverse
+from .models import Assessment
 from .forms import AssessmentForm
+
+
+def result(request):
+    print("reached")
+    uuid = request.GET.get("uuid")
+    a = Assessment.objects.get(uuid=uuid)
+    data = {
+        "assessment": a
+    }
+    return render(request, 'assessment/result.html', data)
 
 
 def index(request):
@@ -12,8 +21,10 @@ def index(request):
         print(request.POST)
         form = AssessmentForm(request.POST)
         if form.is_valid():
-            form.save(user=request.user)
-            return HttpResponse(f"Success")
+            assessment = form.save(user=request.user)
+            uuid = assessment.uuid
+            url = reverse('result')+"?uuid="+str(uuid)
+            return JsonResponse(status=302, data={'url': url})
         else:
             print(form.errors)
             return HttpResponse(form.errors)
