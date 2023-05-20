@@ -5,7 +5,7 @@ from django.contrib.auth import login
 
 
 def home(request):
-    return render(request, 'home.html')
+    return redirect('/login/')
 
 
 def sign_up(request):

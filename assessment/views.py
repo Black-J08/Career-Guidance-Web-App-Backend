@@ -1,10 +1,12 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
 from django.urls import reverse
 from .models import Assessment
 from .forms import AssessmentForm
 
 
+@login_required(login_url="/login/")
 def result(request):
     uuid = request.GET.get("uuid")
     a = Assessment.objects.get(uuid=uuid)
@@ -14,6 +16,7 @@ def result(request):
     return render(request, 'assessment/result.html', data)
 
 
+@login_required(login_url="/login/")
 def index(request):
     if request.method == 'POST':
         # Get the submitted data and display it
