@@ -9,5 +9,25 @@
 
 
 {% block body %}
-<a href="/assessment" class="btn btn-success shadow float-end">+ New</a>
+<a href="/assessment" class="btn btn-success shadow float-end mb-5">+ New</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Holland Code</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for items in user_assessments %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{items.name}}</td>
+            <td>{{items.hollandCode1}}, {{items.hollandCode2}}, {{items.hollandCode3}}</td>
+            <td><a href="/assessment/result/?uuid={{items.uuid}}" class="btn btn-primary">View</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
