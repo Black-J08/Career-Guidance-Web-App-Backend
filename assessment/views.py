@@ -6,11 +6,10 @@ from .forms import AssessmentForm
 
 
 def result(request):
-    print("reached")
     uuid = request.GET.get("uuid")
     a = Assessment.objects.get(uuid=uuid)
     data = {
-        "assessment": a
+        "assessment": a.result
     }
     return render(request, 'assessment/result.html', data)
 
@@ -18,7 +17,7 @@ def result(request):
 def index(request):
     if request.method == 'POST':
         # Get the submitted data and display it
-        print(request.POST)
+        # print(request.POST)
         form = AssessmentForm(request.POST)
         if form.is_valid():
             assessment = form.save(user=request.user)

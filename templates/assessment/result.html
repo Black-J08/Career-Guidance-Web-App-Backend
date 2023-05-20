@@ -9,5 +9,7 @@
 
 
 {% block body %}
-Submitted text {{assessment}}
+{% autoescape off %}
+{{assessment}}
+{% endautoescape %}
 {% endblock %}

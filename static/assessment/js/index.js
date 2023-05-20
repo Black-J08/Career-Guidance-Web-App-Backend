@@ -83,6 +83,10 @@ function getCookie(name) {
 }
 
 function sendData() {
+    const submitBtn = document.getElementById("Btn");
+    submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...`;
+    submitBtn.disabled = true;
+
     let _name = document.getElementById('name').value;
     let _age = document.getElementById('age').value;
     let _sex;

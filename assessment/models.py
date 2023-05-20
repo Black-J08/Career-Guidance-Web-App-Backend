@@ -24,3 +24,4 @@ class Assessment(models.Model):
     hollandCode1 = models.CharField(max_length=20)
     hollandCode2 = models.CharField(max_length=20)
     hollandCode3 = models.CharField(max_length=20)
+    result = models.CharField(max_length=10000, default="")
