@@ -10,7 +10,7 @@ class Assessment(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
     sex = models.CharField(max_length=1)
-    stream = models.CharField(max_length=1)
+    stream = models.CharField(max_length=10)
     subject_1_name = models.CharField(max_length=50)
     subject_1_marks = models.IntegerField(default=0)
     subject_2_name = models.CharField(max_length=50)
