@@ -25,7 +25,10 @@
             <th scope="row">{{ forloop.counter }}</th>
             <td>{{items.name}}</td>
             <td>{{items.hollandCode1}}, {{items.hollandCode2}}, {{items.hollandCode3}}</td>
-            <td><a href="/assessment/result/?uuid={{items.uuid}}" class="btn btn-primary">View</a></td>
+            <td>
+                <a href="/assessment/result/?uuid={{items.uuid}}" class="btn btn-primary">View</a>
+                <a href="/assessment/delete/?uuid={{items.uuid}}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
